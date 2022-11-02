@@ -1,0 +1,39 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/sap/SEPMRA_PROD_MAN/$metadata">
+        <edmx:Include Namespace="SEPMRA_PROD_MAN" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <Annotations Target="SAP.SEPMRA_C_PD_ProductType">
+                <Annotation Term="UI.SelectionVariant" Qualifier="Price">
+                    <Record Type="UI.SelectionVariantType">
+                        <PropertyValue Property="SelectOptions">
+                            <Collection>
+                                <Record Type="UI.SelectOptionType">
+                                    <PropertyValue Property="Ranges">
+                                        <Collection>
+                                            <Record Type="UI.SelectionRangeType">
+                                                <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/GE"/>
+                                                <PropertyValue Property="Low" String="102"/>
+                                                <PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+                                            </Record>
+                                            <Record Type="UI.SelectionRangeType">
+                                                <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/NE"/>
+                                                <PropertyValue Property="Low" String="101"/>
+                                                <PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+                                            </Record>
+                                        </Collection>
+                                    </PropertyValue>
+                                    <PropertyValue Property="PropertyName" PropertyPath="Price"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
